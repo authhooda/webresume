@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aryan Hooda | Executive Resume</title>
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -46,7 +47,7 @@
     /* Header */
     header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 35px;
     }
 
     .badge {
@@ -75,8 +76,52 @@
       color: var(--text-muted);
       font-size: 1.05rem;
       max-width: 640px;
-      margin: 0 auto;
+      margin: 0 auto 24px auto;
       font-weight: 300;
+    }
+
+    /* Action Links Bar */
+    .links-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-link.primary {
+      background: var(--accent);
+      color: #090a0f;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-link.primary:hover {
+      background: #e5c358;
+      color: #090a0f;
     }
 
     /* Metric Grid */
@@ -270,6 +315,13 @@
       color: #ffffff;
     }
 
+    footer {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
     @media (max-width: 600px) {
       .section {
         padding: 24px;
@@ -280,6 +332,12 @@
       .timeline-header {
         flex-direction: column;
       }
+      .links-bar {
+        flex-direction: column;
+      }
+      .btn-link {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -287,12 +345,30 @@
 
   <div class="container">
     
+    <!-- Profile Header -->
     <header>
-      <span class="badge">Portfolio & Executive Profile</span>
+      <span class="badge">Executive Profile & Portfolio</span>
       <h1>Aryan Hooda</h1>
       <p class="tagline">Bridging customer experience, CRM intelligence, and operational efficiency to scale business performance.</p>
+
+      <!-- Action / Contact Links -->
+      <div class="links-bar">
+        <a class="btn-link primary" href="https://docs.google.com/document/d/1gaKI6b5DxxMKtGAqLye8wxCmCAe3yDzyJ-fufxXmMQE/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+          📄 View Full Resume
+        </a>
+        <a class="btn-link" href="https://www.linkedin.com/in/aryan-hooda-59000a273/" target="_blank" rel="noopener noreferrer">
+          💼 LinkedIn
+        </a>
+        <a class="btn-link" href="mailto:WorkHooda@pm.me">
+          ✉️ WorkHooda@pm.me
+        </a>
+        <a class="btn-link" href="tel:+919817347188">
+          📞 +91 98173 47188
+        </a>
+      </div>
     </header>
 
+    <!-- Metrics Matrix -->
     <div class="metrics-grid">
       <div class="metric-card">
         <div class="metric-value">100%</div>
@@ -312,6 +388,7 @@
       </div>
     </div>
 
+    <!-- Snapshot -->
     <section class="section">
       <h2>1. The Snapshot</h2>
       <p class="snapshot-text">
@@ -319,10 +396,12 @@
       </p>
     </section>
 
+    <!-- Experience Timeline -->
     <section class="section">
       <h2>2. Career Timeline</h2>
       
       <div class="timeline">
+        <!-- Role 1 -->
         <div class="timeline-item">
           <div class="timeline-header">
             <span class="role-title">Customer Experience Agent</span>
@@ -335,6 +414,7 @@
           </ul>
         </div>
 
+        <!-- Role 2 -->
         <div class="timeline-item">
           <div class="timeline-header">
             <span class="role-title">Operations Lead & Founder</span>
@@ -349,6 +429,7 @@
       </div>
     </section>
 
+    <!-- Skills & Stack -->
     <section class="section">
       <h2>3. Skills & Tech Stack</h2>
       
@@ -380,6 +461,10 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      <p>© 2026 Aryan Hooda &nbsp;•&nbsp; Mohali / Haryana, India</p>
+    </footer>
 
   </div>
 
