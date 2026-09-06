@@ -3,137 +3,292 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aryan Hooda | WebResume</title>
+  <title>Aryan Hooda | Executive Resume</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --accent: #38bdf8;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --border: #334155;
+      --bg: #090a0f;
+      --card-bg: rgba(18, 21, 29, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #d4af37; /* Warm Champagne Gold */
+      --accent-soft: rgba(212, 175, 55, 0.12);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
       background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 40px 20px;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.04) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(30, 41, 59, 0.5) 0px, transparent 50%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 60px 20px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
+    /* Header */
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: var(--text);
+      font-family: 'Cinzel', serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 12px;
     }
 
     .tagline {
-      color: var(--accent);
-      font-size: 1.1rem;
-      max-width: 600px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 640px;
       margin: 0 auto;
+      font-weight: 300;
     }
 
+    /* Metric Grid */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
     .metric-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 20px;
-      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      padding: 22px 16px;
+      border-radius: 10px;
       text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 175, 55, 0.3);
     }
 
     .metric-value {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      font-weight: 600;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      font-family: 'Cinzel', serif;
     }
 
     .metric-label {
-      font-size: 0.85rem;
-      color: var(--muted);
+      font-size: 0.75rem;
+      color: var(--text-dim);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      font-weight: 500;
     }
 
+    /* Main Sections */
     .section {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px;
-      margin-bottom: 24px;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
     }
 
     h2 {
+      font-family: 'Cinzel', serif;
       font-size: 1.25rem;
-      margin-bottom: 16px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       color: var(--accent);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    p {
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--card-border);
+    }
+
+    .snapshot-text {
       color: #cbd5e1;
+      font-size: 0.98rem;
+      font-weight: 300;
     }
 
-    .skills-group {
-      margin-bottom: 16px;
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      margin-left: 6px;
     }
 
-    .skills-group:last-child {
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-item:last-child {
       margin-bottom: 0;
     }
 
-    .skills-category {
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 6px;
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -29.5px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     }
 
-    .skill-tags {
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .company-title {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .timeline-meta {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-bullets {
+      list-style-type: none;
+    }
+
+    .timeline-bullets li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      font-size: 0.93rem;
+    }
+
+    .timeline-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    /* Skills Grid */
+    .skills-category {
+      margin-bottom: 20px;
+    }
+
+    .skills-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .skill-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .tag {
-      background: #0f172a;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 4px 10px;
-      border-radius: 4px;
+    .pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 6px;
       font-size: 0.85rem;
+      letter-spacing: 0.2px;
+      transition: all 0.2s ease;
+    }
+
+    .pill:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      background: var(--accent-soft);
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 24px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .timeline-header {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
+    
     <header>
+      <span class="badge">Portfolio & Executive Profile</span>
       <h1>Aryan Hooda</h1>
       <p class="tagline">Bridging customer experience, CRM intelligence, and operational efficiency to scale business performance.</p>
     </header>
@@ -148,7 +303,7 @@
         <div class="metric-label">Ops & Logistics</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">Salesforce & AI</div>
+        <div class="metric-value" style="font-size: 1.15rem;">Salesforce & AI</div>
         <div class="metric-label">Workflow Optimization</div>
       </div>
       <div class="metric-card">
@@ -159,39 +314,73 @@
 
     <section class="section">
       <h2>1. The Snapshot</h2>
-      <p>Customer Experience and Operations Specialist with proven expertise in CRM administration, cross-functional communication, and logistics management. Experienced in leveraging Salesforce, Advanced Excel, and AI productivity tools to streamline workflows, resolve complex escalations, and drive operational efficiency. Currently pursuing an MBA with a strong foundation in business administration and process optimization.</p>
+      <p class="snapshot-text">
+        Customer Experience and Operations Specialist with proven expertise in CRM administration, cross-functional communication, and logistics management. Experienced in leveraging Salesforce, Advanced Excel, and AI productivity tools to streamline workflows, resolve complex escalations, and drive operational efficiency. Currently pursuing an MBA with a strong foundation in business administration and process optimization.
+      </p>
     </section>
 
     <section class="section">
-      <h2>2. Skills & Tech Stack</h2>
-      <div class="skills-group">
-        <div class="skills-category">CRM & Tools</div>
-        <div class="skill-tags">
-          <span class="tag">Salesforce CRM</span>
-          <span class="tag">Advanced Excel (Pivot Tables, VLOOKUP)</span>
-          <span class="tag">PowerPoint</span>
+      <h2>2. Career Timeline</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="role-title">Customer Experience Agent</span>
+          </div>
+          <div class="timeline-meta">June 2025 – August 2026 &nbsp;|&nbsp; Mohali</div>
+          <ul class="timeline-bullets">
+            <li>Maintained 100% SLA compliance managing CRM workflows and complex customer escalations.</li>
+            <li>Utilized Salesforce and Advanced Excel for performance reporting, KPI tracking, and operational analysis.</li>
+            <li>Mentored new associates on CRM navigation, escalations handling, and standard resolution protocols.</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="skills-group">
-        <div class="skills-category">Operations</div>
-        <div class="skill-tags">
-          <span class="tag">Customer Success</span>
-          <span class="tag">Vendor Negotiations</span>
-          <span class="tag">Fleet Logistics</span>
-          <span class="tag">SLA Management</span>
-        </div>
-      </div>
-
-      <div class="skills-group">
-        <div class="skills-category">Modern Stack</div>
-        <div class="skill-tags">
-          <span class="tag">Generative AI Integration</span>
-          <span class="tag">Process Automation</span>
-          <span class="tag">Analytical Reporting</span>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="role-title">Operations Lead & Founder</span>
+            <span class="company-title">Transport Venture</span>
+          </div>
+          <div class="timeline-meta">2022 – 2023 &nbsp;|&nbsp; Rohtak, Haryana</div>
+          <ul class="timeline-bullets">
+            <li>Managed fleet dispatch, vendor contract negotiations, and strategic route planning.</li>
+            <li>Directed full-cycle budgeting, operational expense allocation, and cash flow operations.</li>
+          </ul>
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <h2>3. Skills & Tech Stack</h2>
+      
+      <div class="skills-category">
+        <div class="category-title">CRM & Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Salesforce CRM</span>
+          <span class="pill">Advanced Excel (Pivot Tables, VLOOKUP)</span>
+          <span class="pill">Microsoft PowerPoint</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <div class="category-title">Operations & Strategy</div>
+        <div class="skill-pills">
+          <span class="pill">Customer Success</span>
+          <span class="pill">Vendor Negotiations</span>
+          <span class="pill">Fleet Logistics</span>
+          <span class="pill">SLA Management</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <div class="category-title">Modern Stack & Analytics</div>
+        <div class="skill-pills">
+          <span class="pill">Generative AI Integration</span>
+          <span class="pill">Process Automation</span>
+          <span class="pill">Analytical Reporting</span>
+        </div>
+      </div>
+    </section>
+
   </div>
 
 </body>
