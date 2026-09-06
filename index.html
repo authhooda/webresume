@@ -3,85 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages Site</title>
-  
+  <title>Aryan Hooda | WebResume</title>
   <style>
     :root {
-      --bg-color: #f4f6f8;
-      --card-bg: #ffffff;
-      --text-color: #1e293b;
-      --accent-color: #2563eb;
-      --accent-hover: #1d4ed8;
-      --border-color: #e2e8f0;
-    }
-
-    body.dark-mode {
-      --bg-color: #0f172a;
+      --bg: #0f172a;
       --card-bg: #1e293b;
-      --text-color: #f8fafc;
-      --accent-color: #38bdf8;
-      --accent-hover: #0ea5e9;
-      --border-color: #334155;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: #334155;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
     }
 
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 500px;
-      width: 100%;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
       text-align: center;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--text);
     }
 
-    p {
-      color: var(--text-color);
-      opacity: 0.85;
-      line-height: 1.6;
+    .tagline {
+      color: var(--accent);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
       margin-bottom: 24px;
     }
 
-    .badge {
-      display: inline-block;
-      background-color: rgba(37, 99, 235, 0.1);
-      color: var(--accent-color);
-      padding: 6px 12px;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    p {
+      color: #cbd5e1;
+    }
+
+    .skills-group {
       margin-bottom: 16px;
     }
 
-    .button-group {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .skills-group:last-child {
+      margin-bottom: 0;
     }
 
-    button {
-      background-color: var(--accent-color
+    .skills-category {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Aryan Hooda</h1>
+      <p class="tagline">Bridging customer experience, CRM intelligence, and operational efficiency to scale business performance.</p>
+    </header>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">SLA & QA Adherence</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">2+ Yrs</div>
+        <div class="metric-label">Ops & Logistics</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Salesforce & AI</div>
+        <div class="metric-label">Workflow Optimization</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">7.88</div>
+        <div class="metric-label">BBA Academic Merit</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>1. The Snapshot</h2>
+      <p>Customer Experience and Operations Specialist with proven expertise in CRM administration, cross-functional communication, and logistics management. Experienced in leveraging Salesforce, Advanced Excel, and AI productivity tools to streamline workflows, resolve complex escalations, and drive operational efficiency. Currently pursuing an MBA with a strong foundation in business administration and process optimization.</p>
+    </section>
+
+    <section class="section">
+      <h2>2. Skills & Tech Stack</h2>
+      <div class="skills-group">
+        <div class="skills-category">CRM & Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Salesforce CRM</span>
+          <span class="tag">Advanced Excel (Pivot Tables, VLOOKUP)</span>
+          <span class="tag">PowerPoint</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-category">Operations</div>
+        <div class="skill-tags">
+          <span class="tag">Customer Success</span>
+          <span class="tag">Vendor Negotiations</span>
+          <span class="tag">Fleet Logistics</span>
+          <span class="tag">SLA Management</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-category">Modern Stack</div>
+        <div class="skill-tags">
+          <span class="tag">Generative AI Integration</span>
+          <span class="tag">Process Automation</span>
+          <span class="tag">Analytical Reporting</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
